@@ -1,0 +1,16 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Moc'ing widget.h...
+  Uic'ing widget.ui...
+  Rcc'ing widget.qrc...
+RCC : warning : No resources in 'D:\dev\work\GraphicsItemTest\test\widget.qrc'.
+  
+  qrc_widget.cpp
+  moc_widget.cpp
+  widget.cpp
+  正在生成代码
+  1 of 142 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    45 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  test.vcxproj -> D:\dev\work\GraphicsItemTest\test\bin\test.exe
