@@ -19,6 +19,6 @@
 #endif
 
 #else  // defined(COMPONENT_BUILD)
-#define ITEMS_EXPORT
+#define ITEMS_EXPORT  __declspec(dllexport)
 #endif
 #endif  // !_ITEMS_EXPORT_H_

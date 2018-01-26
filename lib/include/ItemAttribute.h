@@ -26,59 +26,11 @@ class ITEMS_EXPORT ItemAttribute
    int fadeInDuration;//淡入持续时间
    int fadeOut;//淡出时间
    int fadeOutDuration;//淡出持续时间
- public:
-   TrackData trackingData;//跟踪数据
-   bool trackEnble;//是否允许跟踪
- 
-   int targetSpeed;//跟踪目标的运动速度，其决定了跟踪时搜索范围
-   bool isTracking;    //true表示跟踪
-   qint64 sTracking;  //开始跟踪的时间点
-   qint64 eTracking;  //结束跟踪的时间点
-   qint64 curTime;//当前时间
-   QGraphicsPathItem* pathItem;
-   bool showTracks;//是否显示轨迹
-   void SetShowTracks(const bool b){ 
-     showTracks = b; 
-     if (pathItem && showTracks)
-     {
-       pathItem->show();
-     }
-     else if (pathItem)
-     {
-       pathItem->hide();
-     }
-     updateAttribute();
-   }
-   bool ShowTracks()const{ return showTracks; }
-   bool TrackEnble()const{ return trackEnble; }
-   void SetTrackEnable(const bool b){ trackEnble = b; }
-   //插入跟踪数据
-   void insertTrackingData(qint64 time, std::vector<QPoint> points)
-   {
-     trackingData.insert(std::map<qint64, std::vector<QPoint> >::value_type(time, points));
-   }
-   //查找time时刻的跟踪数据
-   ITERATOR find(qint64 time)
-   {
-     return trackingData.find(time);
-   }
-   //清空time之后的数据，主要用于手动调整后，清空调整时刻之后的跟踪数据。
-   int  erase2End(qint64 time)
-   {
-     return erase2End(find(time));
-   }
-   int erase2End(ITERATOR _iter)
-   {
-     int count = 0;
-     while (_iter != trackingData.end())
-     {
-       trackingData.erase(_iter++);
-       count++;
-     }
-     return count;
-   }
 
+  
+  
 public:
+    qint64 curTime;//当前时间
   ToolAtrribute attr; //工具的属性
 public:
   ItemAttribute(int _startTime = -1//item出现的时间
@@ -93,14 +45,8 @@ public:
       , fadeInDuration(_fadeInDuration)
       , fadeOut(_fadeOut)
       , fadeOutDuration(_fadeOutDuration)
-      , trackEnble(false)
-      , showTracks(false)
       , curTime(0) {
-      isTracking = false;
-      sTracking = -1;
-      eTracking = -1;
-      targetSpeed = 10;
-      pathItem = NULL;
+    
   }
 
   virtual ~ItemAttribute() {}

@@ -133,11 +133,6 @@ public:
     //载入
     int loadItems();
 
-    //显示、隐藏水平线
-    void HorizontalLines(bool checked);
-    //显示、隐藏垂直线
-    void VerticalLines(bool checked);
-
 
     // 重设定时器处理函数
     void TimerReset();
@@ -160,10 +155,6 @@ private:
     //开始拖放时观察矩形的坐标
     QRectF mStartRect;      
 
-//     //水平线
-//     QGraphicsPartitionItem* h;  
-//     //垂直线
-//     QGraphicsPartitionItem* v; 
 
     ToolAtrribute* toolAttribute;
     QGraphicsItem* parent_rect_;
